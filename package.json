@@ -1,0 +1,25 @@
+{
+  "name": "gcalcsvsync",
+  "version": "1.0.0",
+  "description": "Sync entries in a CSV file in Google Calendar",
+  "main": "index.js",
+  "scripts": {
+    "exec": "tsc && node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eric Santos",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "@googleapis/calendar": "^9.7.5",
+    "@googleapis/docs": "^3.0.2",
+    "csv": "^6.3.9",
+    "csv-parse": "^5.5.6",
+    "dotenv": "^16.4.5",
+    "googleapis": "^140.0.0",
+    "install": "^0.13.0",
+    "npm": "^10.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.6"
+  }
+}
