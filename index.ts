@@ -39,14 +39,23 @@ async function main() {
                 timeZone: process.env.TIMEZONE
             },
             attendees: [],
-            reminders: {},
+            reminders: {
+                useDefault: false,
+                overrides: [
+                    { method: "popup", minutes: 30 },
+                ]
+            },
         };
-
-        let calendarInsertResult = await calendarClient.events.insert({
-            calendarId: process.env.CALENDAR_ID,
-            auth: authenticationClient,
-            requestBody: calendarEvent
-        });
+        
+        try {
+            await calendarClient.events.insert({
+                calendarId: process.env.CALENDAR_ID,
+                auth: authenticationClient,
+                requestBody: calendarEvent
+            });
+        } catch (e) {
+            console.error(e);
+        }
     }
 }
 
